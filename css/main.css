@@ -1,0 +1,26 @@
+body {
+  font-family: "Public Sans", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.perents__inner {
+  max-width: 500px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.perents__contact::-webkit-inner-spin-button {
+  display: none;
+}
+
+.hero__item p {
+  margin-bottom: 8px;
+}
+
+.hero__item a {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 8px;
+}

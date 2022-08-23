@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <title>Js object</title>
+</head>
+
+<body>
+  <main>
+    <section class="perents">
+      <div class="container">
+        <h1 class="h2 text-center">Oilangiz haqada ma`lumot kiriting</h1>
+        <div class="perents__inner">
+          <form class="perents__form perents__form-js" autocomplete="off">
+            <div class="row align-items-center text-center">
+              <div class="mb-3 col-12">
+                <input class="form-control perents__name perents__name-js mb-2" type="text" placeholder="Ism" required>
+                <input class="form-control perents__surname perents__surname-js mb-2" type="text" placeholder="Familya"
+                  required>
+                <input class="form-control perents__contact perents__contact-js mb-2" type="number"
+                  placeholder="Telefon" required>
+                <input class="form-control perents__relative perents__relative-js" type="text" placeholder="Qarindosh"
+                  required>
+              </div>
+              <div class="mb-3 col-12">
+                <button class="btn btn-primary" type="submit">Kiritish</button>
+                <button class="btn btn-danger" type="reset">O`chirsh</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="perents__result result">
+            <ul class="result-list list-unstyled"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
