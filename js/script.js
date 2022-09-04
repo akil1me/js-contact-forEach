@@ -37,7 +37,7 @@ elForm.addEventListener("submit", evt => {
     elParagraphName.textContent = `Ismi: ${arr.ismi}`;
     elParagraphSurname.textContent = `Familyasi: ${arr.familyasi}`;
     elLinkTel.textContent = `Telefon raqami: +${arr.telefon}`;
-    elLinkTel.href = `tel: +${arr.telefon}`
+    elLinkTel.href = `tel: +${arr.telefon}`;
     elParagraphRelative.textContent = `Qarindoshligi: ${arr.qarindosh}`;
 
     if (nameValue.includes(Number(nameValue)) || surnameValue.includes(Number(surnameValue)) || relativeValue.includes(Number(relativeValue))) {
@@ -56,18 +56,22 @@ elForm.addEventListener("submit", evt => {
 
       if (isNaN(telValue)) {
         elLinkTel.textContent = "Istimos raqamni son da kiriting";
-        elLinkTel.href = `#tel`
+        elLinkTel.href = `#tel`;
         delete arr.telefon;
       }
     }
     else if (isNaN(telValue)) {
       elLinkTel.textContent = "Istimos raqamni son da kiriting";
-      elLinkTel.href = `#tel`
+      elLinkTel.href = `#tel`;
       delete arr.telefon;
     }
 
-    elItem.append(elParagraphName, elParagraphSurname, elLinkTel, elParagraphRelative)
-    elResultList.appendChild(elItem)
+    localStorage.clear();
+    // add local storage
+    localStorage.setItem("person", JSON.stringify(arrResultObject));
+
+    elItem.append(elParagraphName, elParagraphSurname, elLinkTel, elParagraphRelative);
+    elResultList.appendChild(elItem);
   })
 
   console.log(arrResultObject);
@@ -78,14 +82,18 @@ elForm.addEventListener("submit", evt => {
   elInputRelative.value = "";
 })
 
+// get local storage
+let getPerson = localStorage.getItem("person");
+console.log(JSON.parse(getPerson));
+
 elForm.addEventListener("reset", () => {
   arrResultObject.splice(0, arrResultObject.length);
-  elResultList.innerHTML = "";
+  elResultList.innerHTML = null;
 
   console.log(arrResultObject);
 
   elInputName.value = "";
   elInputSurename.value = "";
   elInputContact.value = "";
-  elInputRelative.value = ""
+  elInputRelative.value = "";
 })
